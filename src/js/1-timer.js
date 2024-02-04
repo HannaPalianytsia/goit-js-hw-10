@@ -20,7 +20,6 @@ const options = {
   onClose(selectedDates) {
       if (selectedDates[0] - (new Date()) <= 0) {
         iziToast.error({
-            title: "Error",
             message: "Please choose a date in the future",
         });
           startBtnRef.disabled = true;
@@ -36,7 +35,7 @@ datetimePickerRef.flatpickr(options);
 
 startBtnRef.addEventListener("click", onStartBtnClick);
 
-function onStartBtnClick(event) {
+function onStartBtnClick() {
     startBtnRef.disabled = true;
     datetimePickerRef.disabled = true;
     const intervalId = setInterval(() => {
